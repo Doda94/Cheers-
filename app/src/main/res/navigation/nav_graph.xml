@@ -7,14 +7,32 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.doda.cheers.HomeFragment"
+        android:name="com.doda.cheers.ui.HomeFragment"
         android:label="@string/home"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_cocktailDetailsFragment"
+            app:destination="@id/cocktailDetailsFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_favorites"
-        android:name="com.doda.cheers.FavoritesFragment"
+        android:name="com.doda.cheers.ui.FavoritesFragment"
         android:label="@string/favorites"
-        tools:layout="@layout/fragment_favorites"/>
+        tools:layout="@layout/fragment_favorites">
+        <action android:id="@+id/action_navigation_favorites_to_cocktailDetailsFragment" app:destination="@id/cocktailDetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/cocktailDetailsFragment"
+        android:name="com.doda.cheers.ui.CocktailDetailsFragment"
+        android:label="fragment_cocktail_details"
+        tools:layout="@layout/fragment_cocktail_details">
+
+        <argument
+            android:name="cocktail"
+            app:argType="com.doda.cheers.model.SimpleCocktail" />
+
+    </fragment>
 
 </navigation>

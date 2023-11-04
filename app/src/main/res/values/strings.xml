@@ -39,4 +39,6 @@
     <string name="home">home</string>
     <string name="favorites">favorites</string>
     <string name="local">local</string>
+    <string name="search">search</string>
+    <string name="ingredients">ingredients</string>
 </resources>

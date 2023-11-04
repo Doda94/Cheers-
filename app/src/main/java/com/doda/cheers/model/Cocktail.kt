@@ -1,7 +1,10 @@
-package com.doda.cheers
+package com.doda.cheers.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+
 
 @Serializable
 data class Cocktail(
@@ -56,4 +59,4 @@ data class Cocktail(
     @SerialName("strImageAttribution") val strImageAttribution: String? = "",
     @SerialName("strCreativeCommonsConfirmed") val strCreativeCommonsConfirmed: String? = "",
     @SerialName("dateModified") val dateModified: String? = "",
-)
+) : java.io.Serializable
