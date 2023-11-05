@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.doda.cheers.CheersApplication
+import com.doda.cheers.R
 import com.doda.cheers.databinding.FragmentCocktailDetailsBinding
 import com.doda.cheers.db.FavoriteCocktail
 import com.doda.cheers.model.Cocktail
@@ -53,6 +54,13 @@ class CocktailDetailsFragment : Fragment() {
             viewModel.insertFavorite(FavoriteCocktail(id, name, instructions, ingredients, imgSrcUrl))
         }
 
+        hideNavBar()
+
+    }
+
+    fun hideNavBar() {
+        val navBar = activity?.findViewById<View>(R.id.bottom_nav_view)
+        navBar?.visibility = View.GONE
     }
 
     fun addUiInfo() {

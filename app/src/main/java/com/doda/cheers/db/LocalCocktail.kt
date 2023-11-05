@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class LocalCocktail(
     @PrimaryKey val id: String,
     val name: String?,
-    val description: String?,
+    val instructions: String?,
     val ingredients: String?,
-    val imgResourceId: Int?,
+    val imgResourceId: String?,
 )

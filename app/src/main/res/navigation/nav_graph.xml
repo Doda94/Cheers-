@@ -34,5 +34,17 @@
             app:argType="com.doda.cheers.model.SimpleCocktail" />
 
     </fragment>
+    <fragment
+        android:id="@+id/navigation_local"
+        android:name="com.doda.cheers.ui.LocalFragment"
+        android:label="LocalFragment">
+        <action
+            android:id="@+id/action_localFragment_to_cocktailDetailsFragment"
+            app:destination="@id/cocktailDetailsFragment"/>
+        <action android:id="@+id/action_navigation_local_to_addCocktailBottomSheetFragment"
+            app:destination="@id/addCocktailBottomSheetFragment"/>
+    </fragment>
+    <dialog android:id="@+id/addCocktailBottomSheetFragment" android:name="com.doda.cheers.ui.AddCocktailBottomSheetFragment"
+        android:label="AddCocktailBottomSheetFragment"/>
 
 </navigation>

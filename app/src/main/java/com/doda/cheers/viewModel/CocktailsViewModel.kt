@@ -19,6 +19,19 @@ class CocktailsViewModel() : ViewModel() {
     fun addRandomCocktail() {
         ApiModule.retrofit.getRandomCocktail().enqueue(object : Callback<CocktailResponse> {
             override fun onResponse(call: Call<CocktailResponse>, response: Response<CocktailResponse>) {
+                _randomCocktailsLiveData.value = listOf()
+                _randomCocktailsLiveData.value = response.body()?.drinks
+            }
+
+            override fun onFailure(call: Call<CocktailResponse>, t: Throwable) {
+                TODO()
+            }
+        })
+    }
+
+    fun searchCocktail(drink: String) {
+        ApiModule.retrofit.searchCocktail(drink).enqueue(object : Callback<CocktailResponse> {
+            override fun onResponse(call: Call<CocktailResponse>, response: Response<CocktailResponse>) {
                 _randomCocktailsLiveData.value = response.body()?.drinks
             }
 

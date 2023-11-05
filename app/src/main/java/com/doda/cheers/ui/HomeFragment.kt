@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.doda.cheers.R
 import com.doda.cheers.api.ApiModule
 import com.doda.cheers.databinding.FragmentHomeBinding
 import com.doda.cheers.model.Cocktail
@@ -39,8 +40,17 @@ class HomeFragment : Fragment() {
 
         observeRandomCocktailsList()
         ApiModule.initRetrofit()
-        viewModel.addRandomCocktail()
+        for (i in 1..5){
+            viewModel.addRandomCocktail()
+        }
+        initSearchView()
+        showNavBar()
 
+    }
+
+    private fun showNavBar() {
+        val navBar = activity?.findViewById<View>(R.id.bottom_nav_view)
+        navBar?.visibility = View.VISIBLE
     }
 
     override fun onDestroyView() {
@@ -69,6 +79,24 @@ class HomeFragment : Fragment() {
             cocktails += items
             initRecyclerView(cocktails)
         }
+    }
+
+    private fun initSearchView() {
+        binding.searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                cocktails = listOf()
+                viewModel.searchCocktail(query!!)
+                adapter.notifyDataSetChanged()
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                cocktails = listOf()
+                viewModel.searchCocktail(newText!!)
+                adapter.notifyDataSetChanged()
+                return true
+            }
+        })
     }
 
 }

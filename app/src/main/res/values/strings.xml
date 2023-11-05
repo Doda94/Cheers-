@@ -41,4 +41,13 @@
     <string name="local">local</string>
     <string name="search">search</string>
     <string name="ingredients">ingredients</string>
+    <string name="add_cocktail">add cocktail</string>
+    <string name="name">name</string>
+    <string name="instructions">instructions</string>
+    <string name="ingredient">ingredient</string>
+    <string name="quantity">quantity</string>
+    <string name="add">add</string>
+    <string name="add_ingredient">add ingredient</string>
+    <string name="add_photo">add photo</string>
+    <string name="add_photo_and_save">add photo and save</string>
 </resources>

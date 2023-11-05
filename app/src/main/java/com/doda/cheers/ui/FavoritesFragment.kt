@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.doda.cheers.CheersApplication
+import com.doda.cheers.R
 import com.doda.cheers.databinding.FragmentFavoritesBinding
 import com.doda.cheers.db.CheersDatabase
 import com.doda.cheers.db.FavoriteCocktail
@@ -43,9 +44,15 @@ class FavoritesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        showNavBar()
         observeFavoritesList()
         viewModel.getFavorites()
 
+    }
+
+    private fun showNavBar() {
+        val navBar = activity?.findViewById<View>(R.id.bottom_nav_view)
+        navBar?.visibility = View.VISIBLE
     }
 
     fun observeFavoritesList() {

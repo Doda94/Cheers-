@@ -1,85 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.CocktailDetailsFragment">
+    tools:context=".ui.CocktailDetailsFragment"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/cocktail_name"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
-            android:gravity="center"
-            tools:text="Mojito"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginTop="16dp"
-            android:adjustViewBounds="true"
-            app:cardCornerRadius="12dp">
-
-            <ImageView
-                android:id="@+id/cocktail_photo"
+            <TextView
+                android:id="@+id/cocktail_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
+                android:gravity="center"
+                tools:text="Mojito"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginTop="16dp"
                 android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                tools:src="@drawable/cocktail_example_photo"
-                />
+                app:cardCornerRadius="12dp">
 
-        </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:id="@+id/cocktail_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    tools:src="@drawable/cocktail_example_photo"
+                    />
 
-        <TextView
-            android:id="@+id/cocktail_instructions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginTop="16dp"
-            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            tools:text="Mojito je koktel koji se sastoji od bijelog ruma, šećera, limete, sode i mente. Postoji više verzija pripreme ovog koktela, a najpoznatija je ona u kojoj se koristi bijeli rum, šećer, limeta, soda i menta. Ovaj koktel je nastao na Kubi, a ime je dobio po mojoj, što na španjolskom znači malo mokro. "/>
+            </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/ingredients"
-            android:textAllCaps="true"
-            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"/>
+            <TextView
+                android:id="@+id/cocktail_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                tools:text="Mojito je koktel koji se sastoji od bijelog ruma, šećera, limete, sode i mente. Postoji više verzija pripreme ovog koktela, a najpoznatija je ona u kojoj se koristi bijeli rum, šećer, limeta, soda i menta. Ovaj koktel je nastao na Kubi, a ime je dobio po mojoj, što na španjolskom znači malo mokro. "/>
 
-        <TextView
-            android:id="@+id/cocktail_ingredients"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginTop="8dp"
-            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            tools:text="sastojci"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/ingredients"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floating_action_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
-            app:srcCompat="@drawable/baseline_star_24"/>
+            <TextView
+                android:id="@+id/cocktail_ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                tools:text="sastojci"/>
 
-    </LinearLayout>
+        </LinearLayout>
 
-</ScrollView>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/baseline_star_24"/>
+
+</FrameLayout>
