@@ -10,7 +10,7 @@ import androidx.room.TypeConverters
     entities = [
         FavoriteCocktail::class,
         LocalCocktail::class
-    ], version = 3
+    ], version = 1
 )
 @TypeConverters(Converters::class)
 abstract class CheersDatabase : RoomDatabase() {
